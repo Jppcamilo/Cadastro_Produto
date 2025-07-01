@@ -6,6 +6,8 @@ public class Main {
         Scanner leitordeDados = new Scanner(System.in);
         ArrayList<Produto> listadeProduto = new ArrayList<>();
 
+
+
         int opcao = 0;
 
         while (opcao != 4) {
@@ -28,6 +30,7 @@ public class Main {
                         String opcaoSimNao = leitordeDados.next();
                         if (opcaoSimNao.equalsIgnoreCase("S")) {
                             opcao = 2;
+                            continue;
                         }
                     } else {
                         System.out.println("Lista de produtos:");
@@ -36,10 +39,21 @@ public class Main {
                         }
                     }
                     break;
-
+                // Adicionar produto
                 case 2:
-                    System.out.println("Teste");
-
+                    //Adicionar o nome
+                    System.out.println("Digite o nome do produto:");
+                    String nome = leitordeDados.next();
+                    //Adicionar o preço
+                    System.out.println("Digite o preço do produto:");
+                    double preco = leitordeDados.nextDouble();
+                    //Adicionar a quantidade
+                    System.out.println("Digite a quantidade do produto:");
+                    // Adicionar o produto na lista
+                    int quantidade = leitordeDados.nextInt();
+                    listadeProduto.add(new Produto(nome, preco, quantidade));
+                    System.out.println("Produto adicionado com sucesso!");
+                    break;
             }
 
         }
