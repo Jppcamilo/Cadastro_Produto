@@ -6,18 +6,16 @@ public class Main {
         Scanner leitordeDados = new Scanner(System.in);
         ArrayList<Produto> listadeProduto = new ArrayList<>();
 
-
-
         int opcao = 0;
 
         while (opcao != 4) {
             System.out.println("+----------------------+-------------------------+");
-            System.out.println("| Opção               | Descrição               |");
+            System.out.println("| Opção                | Descrição               |");
             System.out.println("+----------------------+-------------------------+");
-            System.out.println("| 1                   | Lista produtos         |");
-            System.out.println("| 2                   | Adicionar produto       |");
-            System.out.println("| 3                   | Remover produto         |");
-            System.out.println("| 4                   | Sair                    |");
+            System.out.println("| 1                    | Lista produtos          |");
+            System.out.println("| 2                    | Adicionar produto       |");
+            System.out.println("| 3                    | Remover produto         |");
+            System.out.println("| 4                    | Sair                    |");
             System.out.println("+----------------------+-------------------------+");
             opcao = leitordeDados.nextInt();
 
