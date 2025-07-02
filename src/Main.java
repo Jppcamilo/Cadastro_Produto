@@ -52,10 +52,33 @@ public class Main {
                     listadeProduto.add(new Produto(nome, preco, quantidade));
                     System.out.println("Produto adicionado com sucesso!");
                     break;
+
+                // Remover produto
+                case 3:
+                    if (listadeProduto.isEmpty()) {
+                        System.out.println("Nenhum produto cadastrado.");
+                        System.out.println("Deseja adicionar um produto? (S/N)");
+                        String opcaoSimNao = leitordeDados.next();
+                        if (opcaoSimNao.equalsIgnoreCase("S")) {
+                            opcao = 2;
+                        }
+                    } else {
+                        System.out.println("Digite o nome do produto que deseja remover: ");
+                        String nomeRemover = leitordeDados.next();
+                        boolean encontrado = false;
+                        for (Produto produto: listadeProduto){
+                            if (nomeRemover.equalsIgnoreCase(produto.getNome())){
+                                listadeProduto.remove(produto);
+                                System.out.println("Produto removido com sucesso!");
+                                encontrado = true;
+                                break;
+                            }
+                        }
+                    }
             }
 
+
         }
-        leitordeDados.close();
     }
 }
 

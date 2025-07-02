@@ -16,4 +16,8 @@ public class Produto {
                "Quantidade: " + quantidade + "\n";
     }
 
+    public String getNome() {
+        return nome;
+    }
+
 }
