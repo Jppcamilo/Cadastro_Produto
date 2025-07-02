@@ -37,3 +37,11 @@ Durante esse projeto, coloquei em prática:
 - Modularização de código com múltiplas classes
 - Controle de fluxo com menus
 - Leitura de dados do usuário com `Scanner`
+
+## 🔄 Possíveis Melhorias Futuras
+- Adicionar persistência em arquivo (salvar os dados em `.txt` ou `.json`)
+- Criar um menu mais amigável com tratamento de erros
+- Permitir edição de produtos já cadastrados
+
+## ✍️ Autor
+Projeto desenvolvido por João Pedro Pereira Camilo como parte dos estudos em Java durante as férias.
