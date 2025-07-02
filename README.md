@@ -24,3 +24,16 @@ Projeto simples feito em Java com foco em reforçar conceitos fundamentais de **
 2. Clone ou baixe este repositório.
 3. Compile e execute o projeto com seu IDE Java preferida (ex: IntelliJ IDEA, VSCode).
 4. Rode a classe `Main.java`.
+
+## 📂 Estrutura do Projeto
+├── Main.java       // Classe principal (interface com o usuário)
+├── Produto.java    // Classe que representa os produtos
+├── Casos.java      // Classe auxiliar que implementa as ações do menu
+
+## 📚 Aprendizados
+Durante esse projeto, coloquei em prática:
+- Criação e instância de objetos em Java
+- Uso de listas para armazenamento em tempo de execução
+- Modularização de código com múltiplas classes
+- Controle de fluxo com menus
+- Leitura de dados do usuário com `Scanner`
