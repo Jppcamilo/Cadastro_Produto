@@ -23,11 +23,13 @@ public class Main {
 
                 case 1:
                     casos.listaProdutos();
+                    break;
                 case 2:
                     casos.adicionarProduto();
-
+                    break;
                 case 3:
                     casos.removerProduto();
+                    break;
             }
 
         }
