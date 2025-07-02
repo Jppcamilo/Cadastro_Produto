@@ -17,3 +17,10 @@ Projeto simples feito em Java com foco em reforçar conceitos fundamentais de **
 - `Scanner` para entrada de dados
 - Estrutura de controle `switch-case`
 - Separação de classes (`Main`, `Produto`, `Casos`)
+
+## 🚀 Como Executar
+
+1. Certifique-se de ter o **JDK instalado** na sua máquina.
+2. Clone ou baixe este repositório.
+3. Compile e execute o projeto com seu IDE Java preferida (ex: IntelliJ IDEA, VSCode).
+4. Rode a classe `Main.java`.
