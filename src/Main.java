@@ -24,12 +24,6 @@ public class Main {
                 case 1:
                     if (listadeProduto.isEmpty()) {
                         System.out.println("Nenhum produto cadastrado.");
-                        System.out.println("Deseja adicionar um produto? (S/N)");
-                        String opcaoSimNao = leitordeDados.next();
-                        if (opcaoSimNao.equalsIgnoreCase("S")) {
-                            opcao = 2;
-                            continue;
-                        }
                     } else {
                         System.out.println("Lista de produtos:");
                         for (Produto produto : listadeProduto) {
@@ -57,11 +51,6 @@ public class Main {
                 case 3:
                     if (listadeProduto.isEmpty()) {
                         System.out.println("Nenhum produto cadastrado.");
-                        System.out.println("Deseja adicionar um produto? (S/N)");
-                        String opcaoSimNao = leitordeDados.next();
-                        if (opcaoSimNao.equalsIgnoreCase("S")) {
-                            opcao = 2;
-                        }
                     } else {
                         System.out.println("Digite o nome do produto que deseja remover: ");
                         String nomeRemover = leitordeDados.next();
