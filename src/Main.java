@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner leitordeDados = new Scanner(System.in);
-        ArrayList<Produto> listadeProduto = new ArrayList<>();
+        casos casos = new casos(leitordeDados);
 
         int opcao = 0;
 
@@ -22,50 +22,13 @@ public class Main {
             switch (opcao) {
 
                 case 1:
-                    if (listadeProduto.isEmpty()) {
-                        System.out.println("Nenhum produto cadastrado.");
-                    } else {
-                        System.out.println("Lista de produtos:");
-                        for (Produto produto : listadeProduto) {
-                            System.out.println(produto.mostrar());
-                        }
-                    }
-                    break;
-                // Adicionar produto
+                    casos.listaProdutos();
                 case 2:
-                    //Adicionar o nome
-                    System.out.println("Digite o nome do produto:");
-                    String nome = leitordeDados.next();
-                    //Adicionar o preço
-                    System.out.println("Digite o preço do produto:");
-                    double preco = leitordeDados.nextDouble();
-                    //Adicionar a quantidade
-                    System.out.println("Digite a quantidade do produto:");
-                    // Adicionar o produto na lista
-                    int quantidade = leitordeDados.nextInt();
-                    listadeProduto.add(new Produto(nome, preco, quantidade));
-                    System.out.println("Produto adicionado com sucesso!");
-                    break;
+                    casos.adicionarProduto();
 
-                // Remover produto
                 case 3:
-                    if (listadeProduto.isEmpty()) {
-                        System.out.println("Nenhum produto cadastrado.");
-                    } else {
-                        System.out.println("Digite o nome do produto que deseja remover: ");
-                        String nomeRemover = leitordeDados.next();
-                        boolean encontrado = false;
-                        for (Produto produto: listadeProduto){
-                            if (nomeRemover.equalsIgnoreCase(produto.getNome())){
-                                listadeProduto.remove(produto);
-                                System.out.println("Produto removido com sucesso!");
-                                encontrado = true;
-                                break;
-                            }
-                        }
-                    }
+                    casos.removerProduto();
             }
-
 
         }
     }
