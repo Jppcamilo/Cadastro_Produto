@@ -1,10 +1,9 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner leitordeDados = new Scanner(System.in);
-        casos casos = new casos(leitordeDados);
+        Casos casos = new Casos(leitordeDados);
 
         int opcao = 0;
 
@@ -32,7 +31,15 @@ public class Main {
                     break;
             }
 
+            if (opcao == 4) {
+                System.out.println("Saindo do programa...");
+            } else if (opcao < 1 || opcao > 4) {
+                System.out.println("Opção inválida. Tente novamente.");
+            }
+
         }
-    }
+
+        }
 }
+
 

@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class casos {
+public class Casos {
 
-    private ArrayList<Produto> listadeProduto;
-    private Scanner leitordeDados;
+    private final ArrayList<Produto> listadeProduto;
+    private final Scanner leitordeDados;
 
-    public casos(Scanner leitordeDados) {
+    public Casos(Scanner leitordeDados) {
 
         this.leitordeDados = leitordeDados;
         this.listadeProduto = new ArrayList<>();
