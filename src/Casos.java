@@ -62,6 +62,9 @@ public class Casos {
                     System.out.println("Produto removido com sucesso!");
                     encontrado = true;
                     break;
+                } else {
+                    System.out.println("Produto não encontrado.");
+                    encontrado = false;
                 }
             }
         }
