@@ -30,18 +30,30 @@ public class Casos {
     }
 
     public void adicionarProduto(){
-        //Adicionar o nome
-        System.out.println("Digite o nome do produto:");
-        String nome = leitordeDados.nextLine();
-        //Adicionar o preço
+        String nome;
+        while (true) {
+            System.out.println("Digite o nome do produto:");
+            nome = leitordeDados.nextLine();
+            boolean nomeExistente = false;
+            for (Produto produto : listadeProduto) {
+                if (produto.getNome().equalsIgnoreCase(nome)) {
+                    System.out.println("❌ Produto já cadastrado. Tente novamente com um nome diferente.");
+                    nomeExistente = true;
+                    break;
+                }
+            }
+            if (!nomeExistente) {
+                break;
+            }
+        }
         System.out.println("Digite o preço do produto:");
         double preco = Double.parseDouble(leitordeDados.nextLine().replace(",", "."));
-        //Adicionar a quantidade
+
         System.out.println("Digite a quantidade do produto:");
-        // Adicionar o produto na lista
-        int quantidade = leitordeDados.nextInt();
+        int quantidade = Integer.parseInt(leitordeDados.nextLine());
+
         listadeProduto.add(new Produto(nome, preco, quantidade));
-        System.out.println("Produto adicionado com sucesso!");
+        System.out.println("✅ Produto adicionado com sucesso!");
     }
 
     public void editarProduto() {
