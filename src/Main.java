@@ -7,14 +7,15 @@ public class Main {
 
         int opcao = 0;
 
-        while (opcao != 4) {
+        while (opcao != 5) {
             System.out.println("\n===================================");
             System.out.println("     📦 SISTEMA DE PRODUTOS");
             System.out.println("===================================\n");
             System.out.println("1️⃣  📋 Listar Produtos");
             System.out.println("2️⃣  ➕ Cadastrar Produto");
-            System.out.println("3️⃣  🗑️ Deletar Produto");
-            System.out.println("4️⃣  ❌ Sair");
+            System.out.println("3️⃣  ✏\uFE0F Editar Produto");
+            System.out.println("4️⃣  🗑️ Deletar Produto");
+            System.out.println("5️⃣  ❌ Sair");
             System.out.print("\nEscolha uma opção: ");
             try {
                 opcao = Integer.parseInt(leitordeDados.nextLine());
@@ -25,20 +26,27 @@ public class Main {
                         System.out.println("👉 Você escolheu: Listar Produtos\n");
                         casos.listaProdutos();
                         break;
+
                     case 2:
                         System.out.println("👉 Você escolheu: Cadastrar Produto\n");
                         casos.adicionarProduto();
                         break;
+
                     case 3:
+                        System.out.println("👉 Você escolheu: Editar Produto\n");
+                        casos.editarProduto();
+                        break;
+
+                    case 4:
                         System.out.println("👉 Você escolheu: Deletar Produto\n");
                         casos.removerProduto();
                         break;
 
-                    case 4:
+                    case 5:
                         casos.sair();
                         break;
                     default:
-                        if (opcao != 4) {
+                        if (opcao != 5) {
                             System.out.println("\n❌ Opção inválida! Por favor, escolha uma opção válida.");
                         }
                         break;
@@ -46,8 +54,7 @@ public class Main {
 
 
             } catch (NumberFormatException e) {
-                System.out.println("\n❌ Entrada inválida! Por favor, digite um número.");
-
+                System.out.println("\n❌ Entrada inválida! Por favor, insira um número válido.");
             }
         }
     }

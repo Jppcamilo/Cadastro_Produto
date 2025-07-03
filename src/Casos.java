@@ -32,16 +32,54 @@ public class Casos {
     public void adicionarProduto(){
         //Adicionar o nome
         System.out.println("Digite o nome do produto:");
-        String nome = leitordeDados.next();
+        String nome = leitordeDados.nextLine();
         //Adicionar o preço
         System.out.println("Digite o preço do produto:");
-        double preco = leitordeDados.nextDouble();
+        double preco = Double.parseDouble(leitordeDados.nextLine().replace(",", "."));
         //Adicionar a quantidade
         System.out.println("Digite a quantidade do produto:");
         // Adicionar o produto na lista
         int quantidade = leitordeDados.nextInt();
         listadeProduto.add(new Produto(nome, preco, quantidade));
         System.out.println("Produto adicionado com sucesso!");
+    }
+
+    public void editarProduto() {
+        if (listadeProduto.isEmpty()) {
+            System.out.println("Nenhum produto cadastrado.");
+            System.out.println("Deseja adicionar um produto? (S/N)");
+            String resposta = leitordeDados.nextLine();
+            if (resposta.equalsIgnoreCase("S")) {
+                adicionarProduto();
+            }
+        } else {
+            System.out.println("Digite o nome do produto que deseja editar: ");
+            String nomeEditar = leitordeDados.nextLine();
+            boolean encontrado = false;
+            for (Produto produto : listadeProduto) {
+                if (nomeEditar.equalsIgnoreCase(produto.getNome())) {
+                    encontrado = true;
+                    System.out.println("Produto encontrado! Digite os novos dados:");
+                    System.out.print("Novo nome: ");
+                    String novoNome = leitordeDados.nextLine();
+                    System.out.print("Novo preço: ");
+                    double novoPreco = Double.parseDouble(leitordeDados.nextLine().replace(",", "."));
+                    System.out.print("Nova quantidade: ");
+                    int novaQuantidade = Integer.parseInt(leitordeDados.nextLine());
+
+                    produto.setNome(novoNome);
+                    produto.setPreco(novoPreco);
+                    produto.setQuantidade(novaQuantidade);
+
+                    System.out.println("Produto editado com sucesso!");
+                    break;
+                }
+            }
+            if (!encontrado) {
+                System.out.println("Produto não encontrado.");
+            }
+        }
+
     }
 
     public void removerProduto(){
