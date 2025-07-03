@@ -16,33 +16,41 @@ public class Main {
             System.out.println("3️⃣  🗑️ Deletar Produto");
             System.out.println("4️⃣  ❌ Sair");
             System.out.print("\nEscolha uma opção: ");
-            opcao = leitordeDados.nextInt();
+            try {
+                opcao = Integer.parseInt(leitordeDados.nextLine());
 
-            switch (opcao) {
+                switch (opcao) {
 
-                case 1:
-                    System.out.println("👉 Você escolheu: Listar Produtos\n");
-                    casos.listaProdutos();
-                    break;
-                case 2:
-                    System.out.println("👉 Você escolheu: Cadastrar Produto\n");
-                    casos.adicionarProduto();
-                    break;
-                case 3:
-                    System.out.println("👉 Você escolheu: Deletar Produto\n");
-                    casos.removerProduto();
-                    break;
+                    case 1:
+                        System.out.println("👉 Você escolheu: Listar Produtos\n");
+                        casos.listaProdutos();
+                        break;
+                    case 2:
+                        System.out.println("👉 Você escolheu: Cadastrar Produto\n");
+                        casos.adicionarProduto();
+                        break;
+                    case 3:
+                        System.out.println("👉 Você escolheu: Deletar Produto\n");
+                        casos.removerProduto();
+                        break;
+
+                    case 4:
+                        System.out.println("👉 Você escolheu: Sair do Sistema\n");
+                        System.out.println("👋 Obrigado por usar o sistema! Até logo!");
+                        leitordeDados.close();
+                        return; // Encerra o programa
+                    default:
+                        if (opcao != 4) {
+                            System.out.println("\n❌ Opção inválida! Por favor, escolha uma opção válida.");
+                        }
+                        break;
+                }
+
+
+            } catch (NumberFormatException e) {
+                System.out.println("\n❌ Entrada inválida! Por favor, digite um número.");
+
             }
-
-            if (opcao == 4) {
-                System.out.println("\n👋 Programa encerrado. Até logo!");
-            } else if (opcao < 1 || opcao > 4) {
-                System.out.println("\n❌ Opção inválida! Por favor, escolha entre as opções disponíveis.");
-            }
-
         }
-
-        }
+    }
 }
-
-
