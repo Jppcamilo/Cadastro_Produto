@@ -70,5 +70,9 @@ public class Casos {
         }
     }
 
-
+    public void sair(){
+        System.out.println("👋 Obrigado por usar o sistema! Até logo!");
+        leitordeDados.close();
+        System.exit(0); // Encerra o programa
+    }
 }

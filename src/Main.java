@@ -35,10 +35,8 @@ public class Main {
                         break;
 
                     case 4:
-                        System.out.println("👉 Você escolheu: Sair do Sistema\n");
-                        System.out.println("👋 Obrigado por usar o sistema! Até logo!");
-                        leitordeDados.close();
-                        return; // Encerra o programa
+                        casos.sair();
+                        break;
                     default:
                         if (opcao != 4) {
                             System.out.println("\n❌ Opção inválida! Por favor, escolha uma opção válida.");
