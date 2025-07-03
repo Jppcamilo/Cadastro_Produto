@@ -83,7 +83,7 @@ public class Casos {
                     produto.setPreco(novoPreco);
                     produto.setQuantidade(novaQuantidade);
 
-                    System.out.println("Produto editado com sucesso!");
+                    System.out.println("✅ Produto editado com sucesso!");
                     break;
                 }
             }
@@ -109,7 +109,7 @@ public class Casos {
             for (Produto produto: listadeProduto){
                 if (nomeRemover.equalsIgnoreCase(produto.getNome())){
                     listadeProduto.remove(produto);
-                    System.out.println("Produto removido com sucesso!");
+                    System.out.println("✅ Produto removido com sucesso!");
                     encontrado = true;
                     break;
                 } else {
