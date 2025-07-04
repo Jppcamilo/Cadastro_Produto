@@ -1,6 +1,6 @@
 public class Usuario {
-    private String username;
-    private String senha;
+    private final String username;
+    private final String senha;
 
     public Usuario(String username, String senha) {
         this.username = username;
