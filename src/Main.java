@@ -32,8 +32,8 @@ public class Main {
 
                 case 3:
                     System.out.println("❌ Saindo do sistema...");
-                    leitordeDados.close();
-                    return;
+                    System.exit(0);
+                    break;
 
                 default:
                     System.out.println("\n❌ Opção inválida! Por favor, escolha uma opção válida.");
