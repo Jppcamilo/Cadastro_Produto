@@ -3,8 +3,46 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner leitordeDados = new Scanner(System.in);
-        Casos casos = new Casos(leitordeDados);
+        UsuarioService usuarioService = new UsuarioService(leitordeDados);
 
+        while (true) {
+            System.out.println("===================================");
+            System.out.println("     🔐 CADASTRO E LOGIN");
+            System.out.println("===================================\n");
+            System.out.println("1️⃣  📋 Cadastrar Usuário");
+            System.out.println("2️⃣  🔑 Fazer Login");
+            System.out.println("3️⃣  ❌ Sair");
+            System.out.print("\nEscolha uma opção: ");
+            int opcao = Integer.parseInt(leitordeDados.nextLine());
+
+            switch (opcao) {
+                case 1:
+                    System.out.println("👉 Você escolheu: Cadastrar Usuário\n");
+                    usuarioService.cadastrarUsuario();
+                    break;
+
+                case 2:
+                    System.out.println("👉 Você escolheu: Fazer Login\n");
+                    if (usuarioService.autenticarUsuario()) {
+                        menu(leitordeDados);
+                    } else {
+                        System.out.println("❌ Falha na autenticação. Verifique seu usuário e senha.");
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("❌ Saindo do sistema...");
+                    leitordeDados.close();
+                    return;
+
+                default:
+                    System.out.println("\n❌ Opção inválida! Por favor, escolha uma opção válida.");
+            }
+        }
+    }
+
+    private static void menu(Scanner leitordeDados) {
+        Casos casos = new Casos(leitordeDados);
         int opcao = 0;
 
         while (opcao != 5) {
@@ -13,7 +51,7 @@ public class Main {
             System.out.println("===================================\n");
             System.out.println("1️⃣  📋 Listar Produtos");
             System.out.println("2️⃣  ➕ Cadastrar Produto");
-            System.out.println("3️⃣  ✏\uFE0F Editar Produto");
+            System.out.println("3️⃣  ✏️ Editar Produto");
             System.out.println("4️⃣  🗑️ Deletar Produto");
             System.out.println("5️⃣  ❌ Sair");
             System.out.print("\nEscolha uma opção: ");
@@ -21,7 +59,6 @@ public class Main {
                 opcao = Integer.parseInt(leitordeDados.nextLine());
 
                 switch (opcao) {
-
                     case 1:
                         System.out.println("👉 Você escolheu: Listar Produtos\n");
                         casos.listaProdutos();
@@ -44,15 +81,11 @@ public class Main {
 
                     case 5:
                         casos.sair();
-                        break;
+                        return;
+
                     default:
-                        if (opcao != 5) {
-                            System.out.println("\n❌ Opção inválida! Por favor, escolha uma opção válida.");
-                        }
-                        break;
+                        System.out.println("\n❌ Opção inválida! Por favor, escolha uma opção válida.");
                 }
-
-
             } catch (NumberFormatException e) {
                 System.out.println("\n❌ Entrada inválida! Por favor, insira um número válido.");
             }
