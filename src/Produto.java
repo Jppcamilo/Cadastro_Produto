@@ -20,14 +20,6 @@ public class Produto {
         return nome;
     }
 
-    public double getPreco() {
-        return preco;
-    }
-
-    public Integer getQuantidade() {
-        return quantidade;
-    }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
